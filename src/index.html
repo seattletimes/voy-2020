@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <script src="https://kit.fontawesome.com/9d53be7224.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <%= t.include("partials/_nav.html") %>
+
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+      <!-- content goes here -->
+    <div class="feature-player">
+     <div class="video-container aspect-outer pending">
+       <div class="aspect-inner">
+         <video
+           data-account="1509317113"
+           data-player="HyhBDMT3M"
+           data-embed="default"
+           id="player"
+           class="video-js" controls>
+         </video>
+         <div id="secondVid">
+           <video
+             data-account="1509317113"
+             data-player="V1eCvUwO2g"
+             data-embed="default"
+             data-video-id="6215806726001"
+             id="playerTwo"
+             class="video-js secondVideo" controls>
+           </video>
+         </div>
+         <video id="looper" width="100%" height="auto" loop autoplay muted>
+          <source src="./assets/looper.mp4" type="video/mp4">
+        </video>
+
+        <div class="brightcove__button replayTeaser">
+          <span class="brightcove__button__text">
+            Watch the full year in review (7:58)
+          </span>
+          <span class="brightcove__button__play">
+            <svg viewBox="0 0 10 10" preserveAspectRatio="xMidYMid meet" role="img" alt="Play icon">
+              <polygon points="9,5 2.648858990830108,8.23606797749979 2.648858990830107,1.7639320225002106" fill="#fff"></polygon>
+            </svg>
+          </span>
+        </div>
+       </div>
+
+     </div>
+     <hr class="divider">
+     <div class="mainVidStats">
+       <div id="title-hed">A look back at 2020</div>
+       <div id="title">2020 was a year of isolation and distancing – yet its events brought us together. From the COVID-19 pandemic to a summer of protests for racial justice, allow our video journalists to transport you through this historic year. (Seattle Times staff)</div>
+       <div id="title-link"><a id="story-link" href="https://www.seattletimes.com/video/" target="_blank" rel="nofollow noreferrer noopener">Read more &raquo;</a></div>
+     </div>
+
+     <h1>2020: The Year in Video</h1>
+     <p class="chatter">
+      2020 has been a year of disruption, reckoning and unimaginable loss. Reflect on our community's resilience, heartbreak and glimpses of joy, as seen through the lenses of our Seattle Times video journalists.
+     </p>
+
+     <p class="publish-date">Published Dec. 15, 2020</p>
+
+     <!-- <div class="direction">&#xb7; Watch the 2020 year in review before exploring our picks &#xb7;</div> -->
+
+
+      <div class="playlist-controls">
+       <div class="playlist-container loading"></div>
+      </div>
+
+      <a href="https://www.seattletimes.com/video/" target="_blank" rel="nofollow noreferrer noopener">
+        <div class="videoHomepage button">
+          See more from the Seattle Times video team
+        </div>
+      </a>
+
+
+        <div class="replayTeaser button">
+          <i class="fas fa-redo-alt"></i>
+          Replay the year in review
+        </div>
+
+
+      <%= t.include("partials/_marketing.html", {type: "subscribe", placement: "footer"}) %>
+   </div>
+    </responsive-child>
+
+    <%= t.include("partials/_navBottom.html") %>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>

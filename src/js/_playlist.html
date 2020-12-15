@@ -1,0 +1,16 @@
+<ul class="playlist">
+<% data.forEach(function(item) {
+  var seconds = Math.round(item.duration);
+  var minutes = Math.floor(seconds/60);
+  var remainder = seconds % 60;
+%>
+  <li class="playlist-item" data-id="<%= item.id %>">
+    <div class="image-frame">
+      <img src="<%= item.poster %>">
+    </div>
+    <div class="cardTitle"><%= item.name %> <span class="duration">(<%= minutes %>:<%= remainder %>)</span></div>
+    <% if (item.link) { %>
+    <!-- <a class="story-link" href="<%= item.link.url %>">Read more &raquo;</a> -->
+    <% } %>
+<% }); %>
+</ul>
