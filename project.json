@@ -2,14 +2,14 @@
   "s3": {
     "stage": {
       "bucket": "projects-staging.seattletimes.com",
-      "path": "damned-ingenuousness-2020"
+      "path": "damned-ingenuousness-2020-jwplayer"
     },
     "live": {
       "bucket": "projects.seattletimes.com",
       "path": "2020/videos-of-the-year"
     }
   },
-  "title": "Videos of the year 2020 | The Seattle Times",
+  "title": "2020: The Year in Video",
   "description": "This historic year through the lenses of Seattle Times video journalists",
   "author": "Corinne Chin Ramon Dompor Lauren Frohne",
   "url": "https://projects.seattletimes.com/2020/videos-of-the-year/",

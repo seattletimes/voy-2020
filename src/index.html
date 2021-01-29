@@ -7,6 +7,7 @@
       <%= t.include("partials/_gtm.html") %>
     <% } %>
     <script src="https://kit.fontawesome.com/9d53be7224.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -17,25 +18,32 @@
     <% } %>
     <responsive-child>
       <!-- content goes here -->
-    <div class="feature-player">
+    <div id="player" class="feature-player">
      <div class="video-container aspect-outer pending">
        <div class="aspect-inner">
-         <video
+         <div id="firstVid">
+         </div>
+         <!-- <video
            data-account="1509317113"
            data-player="HyhBDMT3M"
            data-embed="default"
            id="player"
            class="video-js" controls>
-         </video>
+         </video> -->
+
+
          <div id="secondVid">
-           <video
+           <!-- <div id="teaser"></div> -->
+           <!-- <video
              data-account="1509317113"
              data-player="V1eCvUwO2g"
              data-embed="default"
              data-video-id="6215806726001"
              id="playerTwo"
              class="video-js secondVideo" controls>
-           </video>
+           </video> -->
+           <script src="https://cdn.jwplayer.com/players/hUnsbabo-UXknQA8J.js"></script>
+
          </div>
          <video id="looper" width="100%" height="auto" loop autoplay muted>
           <source src="./assets/looper.mp4" type="video/mp4">
@@ -88,12 +96,14 @@
         </div>
 
 
+
       <%= t.include("partials/_marketing.html", {type: "subscribe", placement: "footer"}) %>
    </div>
     </responsive-child>
 
     <%= t.include("partials/_navBottom.html") %>
 
+    <script src="https://cdn.jwplayer.com/libraries/xXnRQM8J.js"></script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
     <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
